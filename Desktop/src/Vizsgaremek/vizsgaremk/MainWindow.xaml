@@ -18,6 +18,18 @@
             <Grid x:Name="PageLogo" Height="150" VerticalAlignment="Top" Background="Orange">
             </Grid>
             <Grid x:Name="PageMenu" Height="874" Width="250" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="Blue">
+                <ListView   BorderBrush="Transparent" Background="Transparent">
+                    <ListViewItem FontFamily="Century Gothic" FontSize="13" Foreground="White">
+                        <TextBlock>
+                            Menü 1.
+                        </TextBlock>
+                    </ListViewItem>
+                    <ListViewItem FontFamily="Century Gothic" FontSize="13" Foreground="White">
+                        <TextBlock>
+                            Kilépés
+                        </TextBlock>
+                    </ListViewItem>
+                </ListView>
 
             </Grid>
         </Grid>
