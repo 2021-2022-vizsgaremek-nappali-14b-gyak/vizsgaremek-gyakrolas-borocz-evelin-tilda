@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace vizsgaremk
+namespace vizsgaremk.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for WelcomePage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WelcomePage : UserControl
     {
-        public MainWindow()
+        public WelcomePage()
         {
             InitializeComponent();
-           
         }
     }
 }
