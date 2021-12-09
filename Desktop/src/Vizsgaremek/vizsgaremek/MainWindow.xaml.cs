@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using vizsgaremk.Navigation;
-using vizsgaremk.Pages;
+using vizsgaremek.Navigation;
+using vizsgaremek.Pages;
 
-namespace vizsgaremk
+namespace vizsgaremek
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -33,6 +33,26 @@ namespace vizsgaremk
             // Megjelnítjük a WelcomePage-t
             Navigate.Navigation(welcomePage);
 
+        }
+        /// <summary>
+        /// Listview elem bal egér gomb fel lett engedve
+        /// </summary>
+        /// <param name="sender"></param>amin megnyomtuk a bal egér gombot
+        /// <param name="e"></param>
+        private void ListView_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ListView lvMenu = sender as ListView;
+            ListViewItem lvMenuItem = lvMenu.SelectedItem as ListViewItem;
+            //vagy as helyett típuskényszerítés
+            if (lvMenuItem!=null)
+            {
+                switch (lvMenuItem.Name)
+                {
+                    case "lvIExit":
+                        Close();
+                        break;
+                }
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿<Application x:Class="vizsgaremk.App"
+﻿<Application x:Class="vizsgaremek.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:vizsgaremk"
+             xmlns:local="clr-namespace:vizsgaremek"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
