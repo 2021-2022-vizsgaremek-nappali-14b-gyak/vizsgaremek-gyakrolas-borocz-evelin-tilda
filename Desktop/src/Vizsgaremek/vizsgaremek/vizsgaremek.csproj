@@ -4,6 +4,10 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Version>0.0.1</Version>
+    <Authors>Böröcz Tilda</Authors>
+    <Company>Vasvári</Company>
+    <Description>Kilépés gomb működik</Description>
   </PropertyGroup>
 
   <ItemGroup>
