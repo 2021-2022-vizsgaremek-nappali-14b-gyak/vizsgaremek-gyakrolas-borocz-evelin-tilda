@@ -25,7 +25,7 @@
                     </ListViewItem>
                     <ListViewItem Height="30" x:Name="lviProgramVersion" FontFamily="Century Gothic" FontSize="13" Foreground="White">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="20" Source="/Icons/exit.png" Margin="5 2 5 2"/>
+                            <Image Height="20" Source="/Icons/back.png" Margin="5 2 5 2"/>
                             <TextBlock Margin="2 2 2 2">
                                 Program verzió
                             </TextBlock>

@@ -7,9 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="874" d:DesignWidth="1030">
 
-    <Grid>
+    <StackPanel>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Image Source="/Icons/back_icon.png" Height="48" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp"/>
+        </StackPanel>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock x:Name="WelcomeText" Text="Program verzió"></TextBlock>
         </StackPanel>
-    </Grid>
+    </StackPanel>
 </UserControl>
+
