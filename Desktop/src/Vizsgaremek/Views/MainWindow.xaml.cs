@@ -60,6 +60,7 @@ namespace Vizsgaremek
                         Navigate.Navigation(programVersion);
                         break;
                 }
+                
             }
         }
 
