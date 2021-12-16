@@ -7,11 +7,11 @@
 	  <SelfContained>false</SelfContained>
 	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	  <UseWPF>true</UseWPF>
-	  <Version>0.0.1</Version>
-	  <Authors>Gyuris Csaba</Authors>
+	  <Version>0.0.2</Version>
+	  <Authors>Böröcz Evelin Tilda</Authors>
 	  <Company>Vasvári</Company>
-	  <Product />
-	  <Description>Kilépés gomb működik</Description>
+	  <Product>vizsgaremek_gyak</Product>
+	  <Description>program verzió navigáció működik</Description>
   </PropertyGroup>
 
   <ItemGroup>
