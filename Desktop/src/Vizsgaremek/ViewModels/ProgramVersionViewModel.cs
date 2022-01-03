@@ -9,7 +9,7 @@ using Vizsgaremek.Models;
 namespace Vizsgaremek.ViewModels
 {
     // ViewModell réteg
-    // A megjeleítendő adatokat kell megadni itt
+    // A megjeleítendő adatokat kell megadni itt vmi
     class ProgramVersionViewModel
     {
         private ProgramInfo programInfo;
