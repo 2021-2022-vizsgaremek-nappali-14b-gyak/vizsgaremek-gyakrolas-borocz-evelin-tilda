@@ -13,9 +13,9 @@
         </StackPanel>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 5 20 5">
             <TextBlock x:Name="WelcomeText" Text="Program verzió"></TextBlock>
-            <StackPanel HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
                 <Label>Program verzió: </Label>
-                <TextBox x:Name="txtVersion" Text="{Binding Path=Version}"/>
+                <TextBox x:Name="txtVersion" Text="{Binding Path=Version}" IsReadOnly="True"/>
             </StackPanel>
         </StackPanel>
     </StackPanel>
