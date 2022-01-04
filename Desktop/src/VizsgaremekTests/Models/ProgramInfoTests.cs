@@ -25,5 +25,14 @@ namespace Vizsgaremek.Models.Tests
             // assert
             Assert.AreEqual(expected, actual, "Version is not 0.0.3.0");
         }
+
+        [TestMethod()]
+        public void ProgramInfoTest()
+        {
+            //title desc company
+            //arrange
+            ProgramInfo programInfo1 = new ProgramInfo();
+            
+        }
     }
 }
