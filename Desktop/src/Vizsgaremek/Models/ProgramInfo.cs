@@ -15,7 +15,9 @@ namespace Vizsgaremek.Models
         private string title;
         private string description;
         private string company;
-
+        public string Title { get => title; set => title = value; }
+        public string Company { get => company; set => company = value; }
+        public string Description { get => description; set => description = value; }
 
         public Version Version
         {
@@ -39,33 +41,9 @@ namespace Vizsgaremek.Models
      
 
         
-        public string Title
-        {
-            get
-            {
-                var assembly1 = Assembly.GetExecutingAssembly();
-                var assemblyTitleAttribute = assembly1.GetType().ToString();
-                return assemblyTitleAttribute;
-            }
-        }
-        public string Description
-        {
-            get
-            {
-                var assembly2 = Assembly.GetExecutingAssembly();
-                var assemblyDescriptionAttribute = assembly2.GetType().ToString();
-                return assemblyDescriptionAttribute;
-            }
-        }
-        public string Company
-        {
-            get
-            {
-                var assembly3 = Assembly.GetExecutingAssembly();
-                var assemblyCompanyAttribute = assembly3.GetType().ToString();
-                return assemblyCompanyAttribute;
-            }
-        }
+       
+
+        
 
         public ProgramInfo()
         {
@@ -86,6 +64,6 @@ namespace Vizsgaremek.Models
 
 
 
-
+        }
         }
     }
