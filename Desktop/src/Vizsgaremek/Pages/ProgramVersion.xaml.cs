@@ -24,11 +24,13 @@ namespace Vizsgaremek.Pages
     /// </summary>
     public partial class ProgramVersion : UserControl
     {
+        ProgramVersionViewModel programVersionViewModel;
         public ProgramVersion()
         {
             InitializeComponent();
-            ProgramVersionViewModel programVersionViewModel = new ProgramVersionViewModel();
+            programVersionViewModel = new ProgramVersionViewModel();
             this.DataContext = programVersionViewModel;
+
 
         }
 
@@ -39,5 +41,10 @@ namespace Vizsgaremek.Pages
             // Statikus osztály ezért az osztály nevét írjuk
             Navigate.Navigation(welcomePage);
         }
+        private void btAuthors_Click(object sender, RoutedEventArgs e)
+        {
+            //txtAuthors.Text = programVersionViewModel.Authors;
+        }
+
     }
 }

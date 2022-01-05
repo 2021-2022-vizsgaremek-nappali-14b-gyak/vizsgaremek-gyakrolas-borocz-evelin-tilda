@@ -70,5 +70,19 @@ namespace Vizsgaremek.Models.Tests
             Assert.AreEqual(expected, actual, "Company is not Vasvári");
 
         }
+
+        [TestMethod()]
+        public void ProgramInfoTestAuthor()
+        {
+            //author
+            //arrange
+            ProgramInfo programInfo = new ProgramInfo();
+            string expected = new string("borocz-evelin-tilda");
+            //act
+            string actual = programInfo.Authors;
+            //assert
+            Assert.AreEqual(expected, actual, "Author is not borocz-evelin-tilda");
+
+        }
     }
 }
