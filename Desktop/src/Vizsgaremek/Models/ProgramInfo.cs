@@ -38,11 +38,11 @@ namespace Vizsgaremek.Models
         {
 
             Assembly assembly = Assembly.GetExecutingAssembly();
-
+GetGithubCollaboratorsName();
 
             foreach (Attribute attr in Attribute.GetCustomAttributes(assembly))
             {
-                GetGithubCollaboratorsName();
+                
 
 
                 if (attr.GetType() == typeof(AssemblyTitleAttribute))
@@ -57,7 +57,7 @@ namespace Vizsgaremek.Models
         }
         private async void GetGithubCollaboratorsName()
         {
-            string reponame = "borocz-evelin-tilda";
+            string reponame = "vizsgaremek-gyakrolas-borocz-evelin-tilda";
             int repoId = 431761373;
             var client = new GitHubClient(new ProductHeaderValue(reponame));
 

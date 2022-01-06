@@ -43,7 +43,7 @@ namespace Vizsgaremek.Pages
         }
         private void btAuthors_Click(object sender, RoutedEventArgs e)
         {
-            //txtAuthors.Text = programVersionViewModel.Authors;
+            txtAuthors.Text = programVersionViewModel.Authors;
         }
 
     }
