@@ -27,7 +27,7 @@ namespace Vizsgaremek.Views.Pages
         public ProgramVersion()
         {
             InitializeComponent();
-            ProgramVersionViewModel programVersionViewModel = new ProgramVersionViewModel();
+            ProgramInfoViewModel programVersionViewModel = new ProgramInfoViewModel();
             this.DataContext = programVersionViewModel;
 
         }

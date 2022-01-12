@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Vizsgaremek.Views.Navigation;
+using Vizsgaremek.ViewModels;
 
 namespace Vizsgaremek.Views.Pages
 {
@@ -21,9 +22,12 @@ namespace Vizsgaremek.Views.Pages
     /// </summary>
     public partial class DatabaseSourcePage : UserControl
     {
+        DataBaseSourceViewModel dataBaseSourceViewModel;
         public DatabaseSourcePage()
         {
+            dataBaseSourceViewModel = new DataBaseSourceViewModel();
             InitializeComponent();
+            //this.DataContext=
         }
 
         private void Image_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
