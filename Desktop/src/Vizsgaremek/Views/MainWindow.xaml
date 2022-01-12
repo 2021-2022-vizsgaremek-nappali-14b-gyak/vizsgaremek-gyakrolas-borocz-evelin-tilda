@@ -28,7 +28,16 @@
                         <StackPanel Orientation="Horizontal">
                             <Image Height="20" Source="/Icons/back_icon.png" Margin="5 2 5 2"/>
                             <TextBlock Margin="2 2 2 2">
-                                Program verzió
+                                Program info
+                            </TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="30" x:Name="lviDatabaseSourceSelection" FontFamily="Century Gothic" FontSize="13" Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="20" Source="/Icons/back_icon.png" Margin="5 2 5 2"/>
+                            <TextBlock Margin="2 2 2 2">
+                                Adatbázis forrás választás
                             </TextBlock>
                         </StackPanel>
                     </ListViewItem>
