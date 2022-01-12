@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Vizsgaremek.Views.Navigation;
 
 namespace Vizsgaremek.Views.Pages
 {
@@ -23,6 +24,12 @@ namespace Vizsgaremek.Views.Pages
         public DatabaseSourcePage()
         {
             InitializeComponent();
+        }
+
+        private void Image_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            WelcomePage welcomePage = new WelcomePage();
+            Navigate.Navigation(welcomePage);
         }
     }
 }

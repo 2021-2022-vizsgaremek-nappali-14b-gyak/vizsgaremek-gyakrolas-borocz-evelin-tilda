@@ -12,7 +12,7 @@
             <Image Source="/Icons/back_icon.png" Height="48" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp" />
         </StackPanel>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 5 20 5">
-            <TextBlock x:Name="WelcomeText" Text="Program adatok"></TextBlock>
+            <TextBlock x:Name="Programinfo" Text="Program adatok"></TextBlock>
             
             <StackPanel Orientation="Horizontal">
                 <Label>Program verzió:</Label>
