@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vizsgaremek.Repositories
 {
-    class DatabaseSources
+    public class DatabaseSources
     {
         private List<string> databaseSourcesItems;
 
