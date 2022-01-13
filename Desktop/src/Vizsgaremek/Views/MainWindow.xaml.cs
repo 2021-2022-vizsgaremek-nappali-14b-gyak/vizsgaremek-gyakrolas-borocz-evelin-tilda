@@ -30,6 +30,7 @@ namespace Vizsgaremek
         {
             mainWindowViewModel = new MainWindowViewModel();
             dataBaseSourceViewModel = new DataBaseSourceViewModel();
+            mainWindowViewModel.SelectedSource = dataBaseSourceViewModel.SelectedDatabaseSource;
             InitializeComponent();
             //mainwindow ablakban megjelenő adatok a mainwinviewmodellben vannak
             this.DataContext = mainWindowViewModel;
@@ -62,8 +63,9 @@ namespace Vizsgaremek
                         Close();
                         break;
                     case "lviDatabaseSouceSelection":
-                        DatabaseSourcePage databaseSourcePage = new DatabaseSourcePage();
+                        DatabaseSourcePage databaseSourcePage = new DatabaseSourcePage(dataBaseSourceViewModel);
                         Navigate.Navigation(databaseSourcePage);
+
                         break;
                     case "lviProgramVersion":
                         ProgramVersion programVersion = new ProgramVersion();
