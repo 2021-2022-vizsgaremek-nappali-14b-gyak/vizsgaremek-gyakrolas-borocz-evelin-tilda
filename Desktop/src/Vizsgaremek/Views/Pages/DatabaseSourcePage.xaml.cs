@@ -27,7 +27,7 @@ namespace Vizsgaremek.Views.Pages
         {
             dataBaseSourceViewModel = new DataBaseSourceViewModel();
             InitializeComponent();
-            //this.DataContext=
+            this.DataContext = dataBaseSourceViewModel;
         }
 
         private void Image_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

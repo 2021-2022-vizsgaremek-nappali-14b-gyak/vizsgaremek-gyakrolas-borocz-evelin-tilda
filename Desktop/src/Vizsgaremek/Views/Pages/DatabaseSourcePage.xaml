@@ -18,7 +18,7 @@
 
             <StackPanel Orientation="Vertical" Margin="20 0 0 20">
                 <Label>Válasszon adatbázist:</Label>
-                <ListBox x:Name="listDatabaseSources" Height="80" Width="200" ItemsSource="{Binding Path=DiskplaydDatabaseSources}" 
+                <ListBox x:Name="listDatabaseSources" Height="80" Width="200" ItemsSource="{Binding Path=DisplayedDatabaseSources}" 
                      SelectedItem="{Binding Path=SelectedDatabaseSource}">
                 </ListBox>
 
