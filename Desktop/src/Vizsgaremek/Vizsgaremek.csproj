@@ -29,7 +29,6 @@
     <Folder Include="Converters\" />
     <Folder Include="Validations\" />
     <Folder Include="Resources\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -20,14 +20,14 @@ using Vizsgaremek.ViewModels;
 namespace Vizsgaremek.Views.Pages
 {
     /// <summary>
-    /// Interaction logic for ProgramVersion.xaml
+    /// Interaction logic for ProgramVersion.xaml 
     /// </summary>
     public partial class ProgramVersion : UserControl
     {
         public ProgramVersion()
         {
             InitializeComponent();
-            ProgramVersionViewModel programVersionViewModel = new ProgramVersionViewModel();
+            ProgramInfoViewModel programVersionViewModel = new ProgramInfoViewModel();
             this.DataContext = programVersionViewModel;
 
         }
