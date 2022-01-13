@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Reflection;
+using System.Diagnostics;
+using System.Net.Http.Headers;
+using Octokit;
 
 namespace Vizsgaremek.Models
 {
@@ -33,7 +36,7 @@ namespace Vizsgaremek.Models
         {
             get
             {
-                return "";
+                return authors;
             }
         }
 
@@ -47,6 +50,7 @@ namespace Vizsgaremek.Models
 
         public ProgramInfo()
         {
+            GetGithubCollaboratorsName();
 
             Assembly assembly = Assembly.GetExecutingAssembly();
 
@@ -65,5 +69,29 @@ namespace Vizsgaremek.Models
 
 
         }
+        private async void GetGithubCollaboratorsName()
+        {
+            string reponame = "vizsgaremek-gyakrolas-borocz-evelin-tilda";
+            int repoId = 431761373;
+            var client = new GitHubClient(new Octokit.ProductHeaderValue(reponame));
+
+            // fejlesztők meghatározása
+            try
+            {
+                var collaborators = await client.Repository.GetAllContributors(repoId);
+                string collaboratorsName = string.Empty;
+                foreach (var collaborator in collaborators)
+                {
+                    string collaboratorLoginName = collaborator.Login;
+                    var user = await client.User.Get(collaboratorLoginName);
+                    collaboratorsName += user.Name + " (" + user.Login + ") ";
+                }
+                authors = collaboratorsName;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
         }
+    }
     }

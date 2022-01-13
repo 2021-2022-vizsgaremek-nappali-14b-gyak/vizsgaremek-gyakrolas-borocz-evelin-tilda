@@ -30,7 +30,9 @@ namespace Vizsgaremek
         {
             mainWindowViewModel = new MainWindowViewModel();
             dataBaseSourceViewModel = new DataBaseSourceViewModel();
-            mainWindowViewModel.SelectedSource = dataBaseSourceViewModel.DisplayedDataBaseSource;
+            mainWindowViewModel.SelectedSource = dataBaseSourceViewModel.DisplayedDatabaseSource;
+            dataBaseSourceViewModel.ChangeDatabaseSource += DatabaseSourceViewModel_ChangeDatabaseSource;
+
             InitializeComponent();
             //mainwindow ablakban megjelenő adatok a mainwinviewmodellben vannak
             this.DataContext = mainWindowViewModel;
@@ -41,6 +43,11 @@ namespace Vizsgaremek
             WelcomePage welcomePage = new WelcomePage();
             // Megjelnítjük a WelcomePage-t
             Navigate.Navigation(welcomePage);
+        }
+
+        private void DatabaseSourceViewModel_ChangeDatabaseSource(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -76,10 +83,8 @@ namespace Vizsgaremek
             }
            
         }
-        public DataBaseSourceViewModel()
-        {
+     
 
-        }
 
     }
 }
