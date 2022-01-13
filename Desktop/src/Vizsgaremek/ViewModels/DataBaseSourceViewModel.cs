@@ -14,55 +14,65 @@ namespace Vizsgaremek.ViewModels
     {
         private ObservableCollection<string> displayedDatabaseSources;
         private string selectedDatabaseSource;
-        private DbSource dbSource;
-        DatabaseSource databaseSource;
         private string displayedDatabaseSource;
+        private DbSource dbSource;
 
-        DatabaseSources repoDataBaseSources;
+        DatabaseSources repoDatabaseSouerces;
 
-        public ObservableCollection<string> DisplayedDatabaseSource { get => displayedDatabaseSources; }
-        public string SelectedDatabaseSource { get => selectedDatabaseSource; set => selectedDatabaseSource = value; }
+        public ObservableCollection<string> DisplayedDatabaseSources
+        {
+            get => displayedDatabaseSources;
+        }
+        public string SelectedDatabaseSource
+        {
+            get => selectedDatabaseSource;
+            set
+            {
+                selectedDatabaseSource = value;
+                displayedDatabaseSource = DisplayedDatabaseSource;
+                dbSource = DbSource;
+            }
+        }
+
         public DbSource DbSource
         {
             get
             {
-                //TDD fejlesztés
-                //return DbSource.NONE;
-                if (selectedDatabaseSource == "loacalhost")
-                {
+                // TDD fejlesztés
+                // return DbSource.NONE;
+                if (selectedDatabaseSource == "localhost")
                     return DbSource.LOCALHOST;
-                }
-                else if (selectedDatabaseSource=="devops")
-                {
+                else if (selectedDatabaseSource == "devops")
                     return DbSource.DEVOPS;
-                }
                 return DbSource.NONE;
             }
         }
 
-        public string DisplayedDatabaseSource { 
-            get {
+        public string DisplayedDatabaseSource
+        {
+            get
+            {
                 switch (dbSource)
                 {
                     case DbSource.DEVOPS:
-                        return "devops adatforrás";
+                        return "devops adatforrás.";
                         break;
                     case DbSource.LOCALHOST:
-                        return "localhost adatforrás";
-                        break;
+                        return "localhost adatforrás.";
                     case DbSource.NONE:
-                        return "beépített adatforrás";
-                        break;
+                        return "beépített teszt adatok.";
                     default:
                         return "";
                 }
-            } 
+            }
+
         }
 
         public DataBaseSourceViewModel()
         {
-            this.repoDataBaseSources = new DatabaseSources();
-            this.displayedDatabaseSources = new ObservableCollection<string>(repoDataBaseSources.GetAllDatabaseSources());
+            repoDatabaseSouerces = new DatabaseSources();
+            displayedDatabaseSources = new ObservableCollection<string>(repoDatabaseSouerces.GetAllDatabaseSources());
+            SelectedDatabaseSource = "localhost";
         }
     }
 }

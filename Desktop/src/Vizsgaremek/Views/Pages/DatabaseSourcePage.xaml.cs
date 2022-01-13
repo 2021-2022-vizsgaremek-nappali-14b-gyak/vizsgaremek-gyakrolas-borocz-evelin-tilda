@@ -22,12 +22,12 @@ namespace Vizsgaremek.Views.Pages
     /// </summary>
     public partial class DatabaseSourcePage : UserControl
     {
-        DataBaseSourceViewModel dataBaseSourceViewModel;
-        public DatabaseSourcePage(DataBaseSourceViewModel databaseSorceViewModel)
+        DataBaseSourceViewModel databaseSourceViewModel;
+        public DatabaseSourcePage(DataBaseSourceViewModel databaseSourceViewModel)
         {
-            dataBaseSourceViewModel = new DataBaseSourceViewModel();
+            this.databaseSourceViewModel = databaseSourceViewModel;
             InitializeComponent();
-            this.DataContext = dataBaseSourceViewModel;
+            this.DataContext = databaseSourceViewModel;
         }
 
         private void Image_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

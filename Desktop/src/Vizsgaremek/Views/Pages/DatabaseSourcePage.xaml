@@ -13,7 +13,7 @@
 
         <StackPanel Orientation="vertical" Margin="200 5 200 5">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock x:Name="Programinfo" FontSize="24" Text="Adatbázis választás"></TextBlock>
+                <TextBlock x:Name="WelcomeText" FontSize="24" Text="Adatbázis választás"></TextBlock>
             </StackPanel>
 
             <StackPanel Orientation="Vertical" Margin="20 0 0 20">

@@ -30,7 +30,7 @@ namespace Vizsgaremek
         {
             mainWindowViewModel = new MainWindowViewModel();
             dataBaseSourceViewModel = new DataBaseSourceViewModel();
-            mainWindowViewModel.SelectedSource = dataBaseSourceViewModel.SelectedDatabaseSource;
+            mainWindowViewModel.SelectedSource = dataBaseSourceViewModel.DisplayedDataBaseSource;
             InitializeComponent();
             //mainwindow ablakban megjelenő adatok a mainwinviewmodellben vannak
             this.DataContext = mainWindowViewModel;
@@ -74,8 +74,12 @@ namespace Vizsgaremek
                 }
                 
             }
+           
         }
+        public DataBaseSourceViewModel()
+        {
 
+        }
 
     }
 }
