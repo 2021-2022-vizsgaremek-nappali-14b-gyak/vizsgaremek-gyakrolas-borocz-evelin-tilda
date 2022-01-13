@@ -23,7 +23,7 @@ namespace Vizsgaremek.Views.Pages
     public partial class DatabaseSourcePage : UserControl
     {
         DataBaseSourceViewModel dataBaseSourceViewModel;
-        public DatabaseSourcePage()
+        public DatabaseSourcePage(DataBaseSourceViewModel databaseSorceViewModel)
         {
             dataBaseSourceViewModel = new DataBaseSourceViewModel();
             InitializeComponent();

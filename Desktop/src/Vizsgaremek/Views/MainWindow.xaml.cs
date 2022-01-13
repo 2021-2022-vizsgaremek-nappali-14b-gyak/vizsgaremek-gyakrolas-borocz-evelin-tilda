@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 using Vizsgaremek.Views.Navigation;
 using Vizsgaremek.Views.Pages;
+using Vizsgaremek.ViewModels;
 
 namespace Vizsgaremek
 {
@@ -23,10 +24,15 @@ namespace Vizsgaremek
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        MainWindowViewModel mainWindowViewModel;
+        DataBaseSourceViewModel dataBaseSourceViewModel;
         public MainWindow()
         {
+            mainWindowViewModel = new MainWindowViewModel();
+            dataBaseSourceViewModel = new DataBaseSourceViewModel();
             InitializeComponent();
+            //mainwindow ablakban megjelenő adatok a mainwinviewmodellben vannak
+            this.DataContext = mainWindowViewModel;
             // Statikus osztály a Navigate
             // Eltárolja a nyitó ablakt, hogy azon tudjuk módosítani a "page"-ket
             Navigate.mainWindow = this;
