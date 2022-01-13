@@ -24,7 +24,7 @@
 
                 <StackPanel Orientation="Horizontal">
                     <Label>A választott adatbázis:</Label>
-                    <TextBlock FontWeight="Bold" x:Name="txtSelectedDatabaseSource" Text="{Binding Path=SelectedDatabaseSource}"></TextBlock>
+                    <TextBlock FontWeight="Bold" x:Name="txtSelectedDatabaseSource" Margin="2 5 2 2" Text="{Binding Path=SelectedDatabaseSource}"></TextBlock>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
