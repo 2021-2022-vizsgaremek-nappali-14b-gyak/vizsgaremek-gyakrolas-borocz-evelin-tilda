@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Reflection;
-using System.Diagnostics;
-using System.Net.Http.Headers;
+
 using Octokit;
+using System.Diagnostics;
 
 namespace Vizsgaremek.Models
 {
@@ -18,17 +18,14 @@ namespace Vizsgaremek.Models
         private string title;
         private string description;
         private string company;
-        public string Title { get => title; set => title = value; }
-        public string Company { get => company; set => company = value; }
-        public string Description { get => description; set => description = value; }
 
         public Version Version
         {
             get
             {
                 var assembly = Assembly.GetExecutingAssembly();
-                var assemblyVerzio = assembly.GetName().Version;
-                return assemblyVerzio;
+                var assemblyVersion = assembly.GetName().Version;
+                return assemblyVersion;
             }
         }
 
@@ -36,25 +33,19 @@ namespace Vizsgaremek.Models
         {
             get
             {
-                return authors;
+                return authors;                
             }
         }
 
-       
-     
-
-        
-       
-
-        
+        public string Title { get => title; set => title = value; }
+        public string Description { get => description; set => description = value; }
+        public string Company { get => company; set => company = value; }
 
         public ProgramInfo()
         {
             GetGithubCollaboratorsName();
 
             Assembly assembly = Assembly.GetExecutingAssembly();
-
-
             foreach (Attribute attr in Attribute.GetCustomAttributes(assembly))
             {
                 if (attr.GetType() == typeof(AssemblyTitleAttribute))
@@ -65,15 +56,13 @@ namespace Vizsgaremek.Models
                     Company = ((AssemblyCompanyAttribute)attr).Company;
 
             }
-
-
-
         }
+
         private async void GetGithubCollaboratorsName()
         {
             string reponame = "vizsgaremek-gyakrolas-borocz-evelin-tilda";
             int repoId = 431761373;
-            var client = new GitHubClient(new Octokit.ProductHeaderValue(reponame));
+            var client = new GitHubClient(new ProductHeaderValue(reponame));
 
             // fejlesztők meghatározása
             try
@@ -93,5 +82,6 @@ namespace Vizsgaremek.Models
                 Debug.WriteLine(e.Message);
             }
         }
+
     }
-    }
+}

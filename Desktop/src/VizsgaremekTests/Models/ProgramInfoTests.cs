@@ -17,58 +17,59 @@ namespace Vizsgaremek.Models.Tests
         {
             // arrange
             ProgramInfo programInfo = new ProgramInfo();
-            Version expected = new Version(0, 0, 3, 0);
+            Version expected = new Version(0, 1, 0, 1);
 
             // act
             Version actual = programInfo.Version;
 
             // assert
-            Assert.AreEqual(expected, actual, "Version is not 0.0.3.0");
-        }
-
-        [TestMethod()]
-        public void ProgramInfoTestTitle()
-        {
-            //title desc company
-            //title
-            //arrange
-            ProgramInfo programInfo = new ProgramInfo();
-            string expected = new string("Vizsgaremek");
-            //act
-            string actual = programInfo.Title;
-            //assert
-            Assert.AreEqual(expected, actual, "Title is not Vizsgaremek");
-
-        }
-
-        [TestMethod()]
-        public void ProgramInfoTestDescription()
-        {
-            //title desc company
-            //description
-            //arrange
-            ProgramInfo programInfo = new ProgramInfo();
-            string expected = new string("A program mvvm része programozás alatt");
-            //act
-            string actual = programInfo.Description;
-            //assert
-            Assert.AreEqual(expected, actual, "Desc is not A program mvvm része programozás alatt");
-
+            Assert.AreEqual(expected, actual, "Version is not 0.1.0.1");
         }
 
         [TestMethod()]
         public void ProgramInfoTestCompany()
         {
-            //title desc company
-            //company
-            //arrange
+            // arrange
             ProgramInfo programInfo = new ProgramInfo();
-            string expected = new string("Vasvári");
-            //act
-            string actual = programInfo.Company;
-            //assert
-            Assert.AreEqual(expected, actual, "Company is not Vasvári");
+            string expected = "Vasvári";
 
+            // act
+            string actual = programInfo.Company;
+
+            // assert
+            Assert.AreEqual(expected, actual, "Company is not Vasvári");
         }
+
+        [TestMethod()]
+        public void ProgramInfoTestTitle()
+        {
+            // arrange
+            ProgramInfo programInfo = new ProgramInfo();
+            string expected = "Vizsgaremek";
+
+            // act
+            string actual = programInfo.Title;
+
+            // assert
+            Assert.AreEqual(expected, actual, "Title is not Vizsgaremek");
+        }
+
+        [TestMethod()]
+        public void ProgramInfoTestDescription()
+        {
+            // arrange
+            ProgramInfo programInfo = new ProgramInfo();
+            string expected = "Vizsgaremek";
+
+            // act
+            string actual = programInfo.Description;
+
+            // assert
+            Assert.AreEqual(expected, actual, "Description is not Vizsgaremek");
+        }
+
+
     }
+
+
 }

@@ -25,16 +25,22 @@ namespace Vizsgaremek
     public partial class MainWindow : Window
     {
         MainWindowViewModel mainWindowViewModel;
-        DataBaseSourceViewModel dataBaseSourceViewModel;
+        DatabaseSourceViewModel databaseSourceViewModel;
+
         public MainWindow()
         {
+            // Különböző ablakok adatai
             mainWindowViewModel = new MainWindowViewModel();
-            dataBaseSourceViewModel = new DataBaseSourceViewModel();
-            mainWindowViewModel.SelectedSource = dataBaseSourceViewModel.DisplayedDatabaseSource;
-            dataBaseSourceViewModel.ChangeDatabaseSource += DatabaseSourceViewModel_ChangeDatabaseSource;
+            databaseSourceViewModel = new DatabaseSourceViewModel();
+            mainWindowViewModel.SelectedSource = databaseSourceViewModel.DisplayedDatabaseSource;
+
+
+            // Feliratkozunk az eseményre. Ha változik az adat az adott osztályba tudni fogunk róla!
+            databaseSourceViewModel.ChangeDatabaseSource += DatabaseSourceViewModel_ChangeDatabaseSource;
+
 
             InitializeComponent();
-            //mainwindow ablakban megjelenő adatok a mainwinviewmodellben vannak
+            // A MainWindow ablakban megjelenő adatok a MainWindowViewModel-ben vannak
             this.DataContext = mainWindowViewModel;
             // Statikus osztály a Navigate
             // Eltárolja a nyitó ablakt, hogy azon tudjuk módosítani a "page"-ket
@@ -47,7 +53,8 @@ namespace Vizsgaremek
 
         private void DatabaseSourceViewModel_ChangeDatabaseSource(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            DatabaseSourceEventArg dsea = (DatabaseSourceEventArg) e;
+            mainWindowViewModel.SelectedSource = dsea.DatabaseSource;
         }
 
         /// <summary>
@@ -70,20 +77,17 @@ namespace Vizsgaremek
                         Close();
                         break;
                     case "lviDatabaseSouceSelection":
-                        DatabaseSourcePage databaseSourcePage = new DatabaseSourcePage(dataBaseSourceViewModel);
+                        DatabaseSourcePage databaseSourcePage = new DatabaseSourcePage(databaseSourceViewModel);
                         Navigate.Navigation(databaseSourcePage);
-
                         break;
                     case "lviProgramVersion":
-                        ProgramVersion programVersion = new ProgramVersion();
+                        ProgramInfo programVersion = new ProgramInfo();
                         Navigate.Navigation(programVersion);
                         break;
                 }
                 
             }
-           
         }
-     
 
 
     }

@@ -4,23 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vizsgaremek"
+        xmlns:converters="clr-namespace:Converters"
         mc:Ignorable="d"
         Title="MainWindow" Height="1024" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Resources>
+        <converters:DevelopVersionToVisibilityConverter x:Key="DevelopVersionToVisibilityConverter"/>
+    </Window.Resources>
+
     <Grid>
         <Grid Width="1030" x:Name="RightPanel" HorizontalAlignment="Right">
             <Grid x:Name="PageHeader" Height="150" VerticalAlignment="Top" Background="Wheat">
             </Grid>
             <Grid x:Name="PageContent" Height="874" VerticalAlignment="Bottom" Background="White">
             </Grid>
-
             <Grid x:Name="ContentStatus" Height="30" VerticalAlignment="Bottom" Background="Silver">
                 <StackPanel Orientation="Horizontal">
-                    <Label>Kiválasztott adatforrás: </Label>
-                    <TextBlock x:Name="SelectedSource" Text="{Binding Path=SelectedSource}"></TextBlock>
-                      
+                    <Label VerticalAlignment="Center">Kiválasztott adatforrás:</Label>
+                    <TextBlock x:Name="SelectedSource" Text="{Binding Path=SelectedSource}" VerticalAlignment="Center"></TextBlock>
                 </StackPanel>
             </Grid>
-            
         </Grid>
         <Grid Width="250" x:Name="LeftPanel" HorizontalAlignment="Left">
             <Grid x:Name="PageLogo" Height="150" VerticalAlignment="Top" Background="Orange">
@@ -32,27 +34,22 @@
                             Menü 1.
                         </TextBlock>
                     </ListViewItem>
-                    
-                    <ListViewItem Height="30" x:Name="lviProgramVersion" FontFamily="Century Gothic" FontSize="13" Foreground="White">
+                    <ListViewItem  Height="30" x:Name="lviDatabaseSouceSelection" FontFamily="Century Gothic" FontSize="13" Foreground="White">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="20" Source="/Icons/back_icon.png" Margin="5 2 5 2"/>
+                            <Image Height="20" Source="/Icons/exit.png" Margin="5 2 5 2"/>
                             <TextBlock Margin="2 2 2 2">
-                                Program info
-                            </TextBlock>
-                        </StackPanel>
-                    </ListViewItem>
-
-                    <ListViewItem x:Name="lviDatabaseSouceSelection" FontFamily="Century Gothic" FontSize="13" Foreground="White">
-                        <StackPanel Orientation="Horizontal">
-                            
-                            <TextBlock>
                                 Adatábázis forrás választás
                             </TextBlock>
                         </StackPanel>
                     </ListViewItem>
-
-
-
+                    <ListViewItem Height="30" x:Name="lviProgramVersion" FontFamily="Century Gothic" FontSize="13" Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="20" Source="/Icons/exit.png" Margin="5 2 5 2"/>
+                            <TextBlock Margin="2 2 2 2">
+                                Program verzió
+                            </TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
                     <ListViewItem Height="30" x:Name="lviExit" FontFamily="Century Gothic" FontSize="13" Foreground="White">
                         <StackPanel Orientation="Horizontal">
                             <Image Height="20" Source="/Icons/exit.png" Margin="5 2 5 2"/>

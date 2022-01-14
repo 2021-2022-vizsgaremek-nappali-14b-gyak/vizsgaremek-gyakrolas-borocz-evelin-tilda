@@ -1,30 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using System.Collections.ObjectModel;
 using Vizsgaremek.Repositories;
 using Vizsgaremek.Models;
-using static Vizsgaremek.Models.DatabaseSource;
 
 namespace Vizsgaremek.ViewModels
 {
-    public class DataBaseSourceViewModel
+    public class DatabaseSourceViewModel
     {
         private ObservableCollection<string> displayedDatabaseSources;
         private string selectedDatabaseSource;
         private string displayedDatabaseSource;
         private DbSource dbSource;
 
-        DatabaseSources repoDatabaseSouerces;
+        DatabaseSouerces repoDatabaseSouerces;
 
-        public ObservableCollection<string> DisplayedDatabaseSources
-        {
-            get => displayedDatabaseSources;
+        public ObservableCollection<string> DisplayedDatabaseSources 
+        { 
+            get => displayedDatabaseSources; 
         }
-        public string SelectedDatabaseSource
-        {
+        public string SelectedDatabaseSource 
+        { 
             get => selectedDatabaseSource;
             set
             {
@@ -49,11 +49,11 @@ namespace Vizsgaremek.ViewModels
             }
         }
 
-        public string DisplayedDatabaseSource
+        public string DisplayedDatabaseSource 
         {
             get
             {
-                switch (dbSource)
+                switch(dbSource)
                 {
                     case DbSource.DEVOPS:
                         return "devops adatforrás.";
@@ -66,26 +66,28 @@ namespace Vizsgaremek.ViewModels
                         return "";
                 }
             }
-
+            
         }
-        public DataBaseSourceViewModel()
+
+        // Erre az eseményre iratkozhat fel egy másik osztály
+        public event EventHandler ChangeDatabaseSource;
+
+        public DatabaseSourceViewModel()
         {
-            repoDatabaseSouerces = new DatabaseSources();
+            repoDatabaseSouerces = new DatabaseSouerces();
             displayedDatabaseSources = new ObservableCollection<string>(repoDatabaseSouerces.GetAllDatabaseSources());
             SelectedDatabaseSource = "localhost";
         }
-        // Erre az eseményre iratkozhat fel egy másik osztály
-        public event EventHandler ChangeDatabaseSource;
+
         // Esemény kiváltása (raise)
         protected void OnDatabaseSourceChange()
         {
             // Argumentumba belepakoljuk az üzenetet
-            DatabaseSourceEventArgs dsea = new DatabaseSourceEventArgs(DisplayedDatabaseSource);
+            DatabaseSourceEventArg dsea = new DatabaseSourceEventArg(DisplayedDatabaseSource);
             // Ha van esemény akkor meghívjük a feliratkozott osztályokat;
             if (ChangeDatabaseSource != null)
                 ChangeDatabaseSource.Invoke(this, dsea);
         }
-
 
     }
 }
