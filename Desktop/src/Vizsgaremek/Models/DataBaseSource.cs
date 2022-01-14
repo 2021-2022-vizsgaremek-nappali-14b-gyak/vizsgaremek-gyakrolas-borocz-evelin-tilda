@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace Vizsgaremek.Models
 {
-   public enum DbSource { NONE, LOCALHOST, DEVOPS }
+    public enum DbSource { NONE, LOCALHOST, DEVOPS }
 
     public class DatabaseSource
-     {
-                private DbSource dbSource;
+    {
+        private DbSource dbSource;
 
-                public DbSource DbSource { get => dbSource; set => dbSource = value; }
+        public DbSource DbSource { get => dbSource; set => dbSource = value; }
 
-                public DatabaseSource()
-                {
-                    this.DbSource = DbSource.NONE;
-                }
-            }
-        
-    
+        public DatabaseSource()
+        {
+            this.DbSource = DbSource.NONE;
+        }
+    }
 }

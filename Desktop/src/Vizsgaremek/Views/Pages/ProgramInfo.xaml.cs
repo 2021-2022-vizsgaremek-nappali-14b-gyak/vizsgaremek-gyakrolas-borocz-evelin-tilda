@@ -20,16 +20,16 @@ using Vizsgaremek.ViewModels;
 namespace Vizsgaremek.Views.Pages
 {
     /// <summary>
-    /// Interaction logic for ProgramVersion.xaml 
+    /// Interaction logic for ProgramVersion.xaml
     /// </summary>
-    public partial class ProgramVersion : UserControl
+    public partial class ProgramInfo : UserControl
     {
-        public ProgramVersion()
+        ProgramInfoViewModel programVersionViewModel;
+        public ProgramInfo()
         {
             InitializeComponent();
-            ProgramInfoViewModel programVersionViewModel = new ProgramInfoViewModel();
+            programVersionViewModel = new ProgramInfoViewModel();
             this.DataContext = programVersionViewModel;
-
         }
 
         // Vissza ikonra kattintva visszatér a nyitóoldalra
@@ -38,6 +38,11 @@ namespace Vizsgaremek.Views.Pages
             WelcomePage welcomePage = new WelcomePage();
             // Statikus osztály ezért az osztály nevét írjuk
             Navigate.Navigation(welcomePage);
+        }
+
+        private void btAuthors_Click(object sender, RoutedEventArgs e)
+        {
+            txtAuthors.Text = programVersionViewModel.Authors;
         }
     }
 }

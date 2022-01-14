@@ -9,7 +9,7 @@ using Vizsgaremek.Models;
 namespace Vizsgaremek.ViewModels
 {
     // ViewModell réteg
-    // A megjeleítendő adatokat kell megadni itt vmi
+    // A megjeleítendő adatokat kell megadni itt
     class ProgramInfoViewModel
     {
         private ProgramInfo programInfo;
@@ -24,39 +24,23 @@ namespace Vizsgaremek.ViewModels
                 Version = value;
             }
         }
-        public string Title
+
+        public string Title { get => programInfo.Title; set => Title = value; }
+        public string Description { get => programInfo.Description; set => Description = value; }
+        public string Company { get => programInfo.Company; set => Company = value; }
+
+        public string Authors
         {
             get
             {
-                return programInfo.Title.ToString();
+                return programInfo.Authors;
             }
             set
             {
-                Title = value;
+                Authors = value;
             }
         }
-        public string Description
-        {
-            get
-            {
-                return programInfo.Description.ToString();
-            }
-            set
-            {
-                Version = value;
-            }
-        }
-        public string Company
-        {
-            get
-            {
-                return programInfo.Company.ToString();
-            }
-            set
-            {
-                Version = value;
-            }
-        }
+
         public ProgramInfoViewModel()
         {
             programInfo = new ProgramInfo();

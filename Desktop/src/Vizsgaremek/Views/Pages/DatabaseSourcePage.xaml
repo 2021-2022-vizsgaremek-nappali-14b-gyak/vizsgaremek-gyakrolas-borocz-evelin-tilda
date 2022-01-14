@@ -8,25 +8,30 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel Orientation="Horizontal" Height="48" VerticalAlignment="Top" HorizontalAlignment="Right">
-            <Image Source="/icons/back_icon.png" Height="48" PreviewMouseLeftButtonDown="Image_PreviewMouseLeftButtonDown"></Image>
+            <Image Source="/Icons/back_icon.png" Height="48" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp"></Image>
         </StackPanel>
-
-        <StackPanel Orientation="vertical" Margin="200 5 200 5">
+        <StackPanel Orientation="Vertical" Margin="200 5 200 5">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock x:Name="WelcomeText" FontSize="24" Text="Adatbázis választás"></TextBlock>
+                <TextBlock x:Name="WelcomeText" FontSize="24" Text="Adatábzis választás"></TextBlock>
             </StackPanel>
-
-            <StackPanel Orientation="Vertical" Margin="20 0 0 20">
+            <StackPanel Orientation="Vertical" Margin="20 0 0 10">
                 <Label>Válasszon adatbázist:</Label>
-                <ListBox x:Name="listDatabaseSources" Height="80" Width="200" ItemsSource="{Binding Path=DisplayedDatabaseSources}" 
-                     SelectedItem="{Binding Path=SelectedDatabaseSource}">
+                <ListBox x:Name="listDatabaseSources"  
+                        Height="80" 
+                        Width="200" 
+                        ItemsSource="{Binding Path=DisplayedDatabaseSources}" 
+                        SelectedItem="{Binding Path=SelectedDatabaseSource}">
                 </ListBox>
-
                 <StackPanel Orientation="Horizontal">
                     <Label>A választott adatbázis:</Label>
-                    <TextBlock FontWeight="Bold" x:Name="txtSelectedDatabaseSource" Margin="2 5 2 2" Text="{Binding Path=SelectedDatabaseSource}"></TextBlock>
+                    <TextBlock FontWeight="Bold" 
+                               Margin="2 5 2 2"
+                               x:Name="txtSelectedDatabaseSource"
+                               Text="{Binding Path=SelectedDatabaseSource}">
+                    </TextBlock>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
+           
     </Grid>
 </UserControl>

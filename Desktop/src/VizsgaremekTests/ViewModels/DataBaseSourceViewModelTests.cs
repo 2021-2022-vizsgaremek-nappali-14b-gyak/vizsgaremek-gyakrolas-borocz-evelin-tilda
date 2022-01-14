@@ -5,9 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Vizsgaremek.Models;
-using Vizsgaremek.ViewModels;
 
+using Vizsgaremek.Models;
 
 namespace Vizsgaremek.ViewModels.Tests
 {
@@ -17,7 +16,7 @@ namespace Vizsgaremek.ViewModels.Tests
         [TestMethod()]
         public void DatabaseSourceViewModelTestLocalhost()
         {
-            DataBaseSourceViewModel databaseSourceViewModel = new DataBaseSourceViewModel();
+            DatabaseSourceViewModel databaseSourceViewModel = new DatabaseSourceViewModel();
             // Felhasználó "rákkattintott a "localhost" szóra
             databaseSourceViewModel.SelectedDatabaseSource = "localhost";
             DbSource expectedDbSource = DbSource.LOCALHOST;
@@ -30,7 +29,7 @@ namespace Vizsgaremek.ViewModels.Tests
         [TestMethod()]
         public void DatabaseSourceViewModelTestDevops()
         {
-            DataBaseSourceViewModel databaseSourceViewModel = new DataBaseSourceViewModel();
+            DatabaseSourceViewModel databaseSourceViewModel = new DatabaseSourceViewModel();
             // Felhasználó "rákkattintott a "localhost" szóra
             databaseSourceViewModel.SelectedDatabaseSource = "devops";
             DbSource expectedDbSource = DbSource.DEVOPS;
@@ -43,7 +42,7 @@ namespace Vizsgaremek.ViewModels.Tests
         [TestMethod()]
         public void DatabaseSourceViewModelTestNone()
         {
-            DataBaseSourceViewModel databaseSourceViewModel = new DataBaseSourceViewModel();
+            DatabaseSourceViewModel databaseSourceViewModel = new DatabaseSourceViewModel();
             // Felhasználó "rákkattintott a "localhost" szóra
             databaseSourceViewModel.SelectedDatabaseSource = "";
             DbSource expectedDbSource = DbSource.NONE;
