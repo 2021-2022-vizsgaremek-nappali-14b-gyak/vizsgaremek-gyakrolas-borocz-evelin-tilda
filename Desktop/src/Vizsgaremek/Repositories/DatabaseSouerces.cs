@@ -12,9 +12,26 @@ namespace Vizsgaremek.Repositories
 
         public DatabaseSouerces()
         {
-            databaseSourcesItems = new List<string>();
-            databaseSourcesItems.Add("localhost");
-            databaseSourcesItems.Add("devops");
+            string storedSelectedSource = Properties.Settings.Default.storedDataSource;
+            
+            if (storedSelectedSource == "test")
+            {
+                databaseSourcesItems = new List<string>();
+                databaseSourcesItems.Add("localhost");
+                databaseSourcesItems.Add("devops");
+            }
+            else
+            {
+                databaseSourcesItems = new List<string>();
+                ApplicationConfigurations appConfigRepo = new ApplicationConfigurations();
+                Dictionary<string, string> allPossibleDatabaseSources = new Dictionary<string, string>();
+                allPossibleDatabaseSources = appConfigRepo.DatabaseSources;
+                foreach (KeyValuePair<string,string> possibleDatabaseSource in allPossibleDatabaseSources)
+                {
+                    string item = possibleDatabaseSource.Key;
+                    databaseSourcesItems.Add(item);
+                }
+            }
         }
 
         public List<string> GetAllDatabaseSources()

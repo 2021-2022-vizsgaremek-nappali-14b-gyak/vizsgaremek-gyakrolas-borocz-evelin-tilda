@@ -17,6 +17,9 @@ using Vizsgaremek.Views.Navigation;
 using Vizsgaremek.Views.Pages;
 using Vizsgaremek.ViewModels;
 
+using System.Globalization;
+using System.Threading;
+
 namespace Vizsgaremek
 {
     /// <summary>
@@ -24,8 +27,10 @@ namespace Vizsgaremek
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainWindowViewModel mainWindowViewModel;
-        DatabaseSourceViewModel databaseSourceViewModel;
+        private MainWindowViewModel mainWindowViewModel;
+        private DatabaseSourceViewModel databaseSourceViewModel;
+
+        private ResourceDictionary dict;
 
         public MainWindow()
         {
@@ -38,6 +43,9 @@ namespace Vizsgaremek
             // Feliratkozunk az eseményre. Ha változik az adat az adott osztályba tudni fogunk róla!
             databaseSourceViewModel.ChangeDatabaseSource += DatabaseSourceViewModel_ChangeDatabaseSource;
 
+            dict = new ResourceDictionary();
+            CultureInfo.CurrentCulture = new CultureInfo("en-En");
+            SetLanguageDictionary();
 
             InitializeComponent();
             // A MainWindow ablakban megjelenő adatok a MainWindowViewModel-ben vannak
@@ -84,11 +92,31 @@ namespace Vizsgaremek
                         ProgramInfo programVersion = new ProgramInfo();
                         Navigate.Navigation(programVersion);
                         break;
-                }
-                
+                }                
             }
         }
 
+        private void SetLanguageDictionary()
+        {
 
+            switch (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName)
+            {
+                case "en":
+                    dict.Source = new Uri("..\\Resources\\StringResources.xaml", UriKind.Relative);
+                    break;
+
+  /*              case "fr":
+                    dict.Source = new Uri("..\\Resources\\FR\\StringResources.xaml", UriKind.Relative);
+                    break;*/
+                case "hu":
+                    dict.Source = new Uri("..\\Resources\\HU\\StringResources.xaml", UriKind.Relative);
+                    break;
+                default:
+                    dict.Source = new Uri("..\\Resources\\StringResources.xaml", UriKind.Relative);
+                    break;
+            }
+            this.Resources.MergedDictionaries.Add(dict);
+        }
     }
 }
+

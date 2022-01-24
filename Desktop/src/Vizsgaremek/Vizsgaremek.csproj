@@ -8,7 +8,7 @@
 	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	  <UseWPF>true</UseWPF>
 	  <Version>0.1.0.1</Version>
-	  <Authors>Böröcz Evelin Tilda</Authors>
+	  <Authors>Gyuris Csaba</Authors>
 	  <Company>Vasvári</Company>
 	  <Product />
 	  <Description>Vizsgaremek</Description>
@@ -32,7 +32,6 @@
   <ItemGroup>
     <Folder Include="Controls\" />
     <Folder Include="Validations\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
 
   <ItemGroup>

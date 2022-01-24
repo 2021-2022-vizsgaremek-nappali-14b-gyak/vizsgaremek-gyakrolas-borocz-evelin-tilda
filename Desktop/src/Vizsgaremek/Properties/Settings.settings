@@ -3,7 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="developVersion" Type="System.Boolean" Scope="Application">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="storedDataSource" Type="System.String" Scope="User">
+      <Value Profile="(Default)">test</Value>
+    </Setting>
+    <Setting Name="storedLanguage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">hu-HU</Value>
     </Setting>
   </Settings>
 </SettingsFile>

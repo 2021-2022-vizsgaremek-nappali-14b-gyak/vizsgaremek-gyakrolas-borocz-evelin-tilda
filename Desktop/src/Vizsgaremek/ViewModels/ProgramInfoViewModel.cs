@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Vizsgaremek.Models;
+using Vizsgaremek.Repositories;
 
 namespace Vizsgaremek.ViewModels
 {
@@ -13,6 +14,7 @@ namespace Vizsgaremek.ViewModels
     class ProgramInfoViewModel
     {
         private ProgramInfo programInfo;
+        private ApplicationConfigurations appConfigRepo;
         public string Version 
         { 
             get
@@ -25,7 +27,7 @@ namespace Vizsgaremek.ViewModels
             }
         }
 
-        public string Title { get => programInfo.Title; set => Title = value; }
+        public string Title { get => appConfigRepo.AppName; set => Title = value; }
         public string Description { get => programInfo.Description; set => Description = value; }
         public string Company { get => programInfo.Company; set => Company = value; }
 
@@ -44,6 +46,7 @@ namespace Vizsgaremek.ViewModels
         public ProgramInfoViewModel()
         {
             programInfo = new ProgramInfo();
+            appConfigRepo = new ApplicationConfigurations();
         }
     }
 }

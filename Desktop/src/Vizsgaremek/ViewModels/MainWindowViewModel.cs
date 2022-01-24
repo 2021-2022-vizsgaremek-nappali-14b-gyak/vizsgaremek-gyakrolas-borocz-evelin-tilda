@@ -13,13 +13,17 @@ namespace Vizsgaremek.ViewModels
         private string selectedSource;
 
         public string SelectedSource 
-        { 
-            get => selectedSource;
+        {
+            get
+            {
+                selectedSource = Properties.Settings.Default.storedDataSource;
+                return selectedSource;
+            }
             set
             {
                 selectedSource = value;
                 OnPropertyChanged("SelectedSource");
             }
-        }            
+        }
     }
 }
